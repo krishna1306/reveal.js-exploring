@@ -1,40 +1,123 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>Welcome to External Index File</section>
+			<section>
+				<h1>Heading 1</h1>
+				<h2>Heading 2</h2>
+				<p>
+					Data
+				</p>
+				<img width="200" class="reveal justify-center" src="./examples/assets/test.png">
+
+
+
+			</section>
+			<section>
+				<h1>Slide 2</h1>
+				<ol>
+					<li class="fragment">Item 1</li>
+					<li class="fragment">Item 2</li>
+					<li class="fragment">Item 3</li>
+				</ol>
+			</section>
+			<section>Slide 3</section>
+			<section>
+				<section>
+					Vertical Slide 1
+				</section>
+				<section>
+					Vertical Slide 2
+				</section>
+			</section>
+			<section data-markdown>
+				<script type="text/template">
+					## Element attributes
+					- Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
+					- Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
+				  </script>
+			</section>
+			<section data-markdown>
+
+
+				<textarea data-template>
+					### Section-Three
+				    ```js [1-2|3|4]
+				    let a = 1;
+				    let b = 2;
+				    let c = x => 1 + 2 + x;
+				    c(3);
+				    ```
+				  </textarea>
+			</section>
+			<section data-auto-animate data-state="make-it-pop">
+				<h2 data-id="code-title">With animations</h2>
+				<pre data-id="code-animation"><code class="javascript" data-trim data-line-numbers="|4,8-11|17|22-24"><script type="text/template">
+						import React, { useState } from 'react';
+
+						function Example() {
+						  const [count, setCount] = useState(0);
+
+						  return (
+						    <div>
+						      <p>You clicked {count} times</p>
+						      <button onClick={() => setCount(count + 1)}>
+						        Click me
+						      </button>
+						    </div>
+						  );
+						}
+
+						function SecondExample() {
+						  const [count, setCount] = useState(0);
+
+						  return (
+						    <div>
+						      <p>You clicked {count} times</p>
+						      <button onClick={() => setCount(count + 1)}>
+						        Click me
+						      </button>
+						    </div>
+						  );
+						}
+					</script></code></pre>
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: true,
+			progress: true,
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
 </html>
